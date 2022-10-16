@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import contract from './contracts/NFTCollectible.json';
+import abi from './contracts/ABI.json';
 import { ethers } from 'ethers';
 
-const contractAddress = "0x355638a4eCcb777794257f22f50c289d4189F245";
-const abi = contract.abi;
+const contractAddress = "0xd1954846d3b257fed1f2dbb92da06339683615ad";
 
 function App() {
 
@@ -57,12 +56,12 @@ function App() {
         const nftContract = new ethers.Contract(contractAddress, abi, signer);
 
         console.log("Initialize payment");
-        let nftTxn = await nftContract.mintNFTs(1, { value: ethers.utils.parseEther("0.01") });
+        let nftTxn = await nftContract.safeMint();
 
         console.log("Mining... please wait");
         await nftTxn.wait();
 
-        console.log(`Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn.hash}`);
+        console.log(`Mined, see transaction: https://goerli.etherscan.io/tx/${nftTxn.hash}`);
 
       } else {
         console.log("Ethereum object does not exist");
@@ -95,7 +94,7 @@ function App() {
 
   return (
     <div className='main-app'>
-      <h1>Scrappy Squirrels Tutorial</h1>
+      <h1>TP ECE</h1>
       <div>
         {currentAccount ? mintNftButton() : connectWalletButton()}
       </div>
