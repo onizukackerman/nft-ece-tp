@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import Market_page from  './Market_page';
+import MarketPage from  './MarketPage';
 import abi from './contracts/ABI.json';
 import { ethers } from 'ethers';
 
@@ -98,7 +98,7 @@ function App() {
       <h1>TP ECE</h1>
       <div id='mint_button'>
         {currentAccount ? mintNftButton() : connectWalletButton()}
-        <Market_page />
+        <MarketPage />
       </div>
     </div>
   )

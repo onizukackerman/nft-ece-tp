@@ -1,6 +1,6 @@
-import './Market_page.css';
+import './MarketPage.css';
 
-function Market_page() {
+function MarketPage() {
 
     
   
@@ -31,4 +31,4 @@ function Market_page() {
     )
   }
   
-  export default Market_page;
+  export default MarketPage;
