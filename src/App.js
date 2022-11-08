@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import Market_page from  './Market_page';
 import abi from './contracts/ABI.json';
 import { ethers } from 'ethers';
 
-const contractAddress = "0xd1954846d3b257fed1f2dbb92da06339683615ad";
+const contractAddress = "0xADd7A0206e31B313664335a3A94095F140cF3709";
 
 function App() {
 
@@ -95,8 +96,9 @@ function App() {
   return (
     <div className='main-app'>
       <h1>TP ECE</h1>
-      <div>
+      <div id='mint_button'>
         {currentAccount ? mintNftButton() : connectWalletButton()}
+        <Market_page />
       </div>
     </div>
   )

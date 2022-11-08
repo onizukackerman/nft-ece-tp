@@ -1,0 +1,11 @@
+.element {width  : 1000px;
+  height : 500px;
+  border-style: ridge;
+  border-color: black;
+}
+
+#element1{background: blueviolet;}
+
+#element2{background: green;}
+
+#element3{background: red;}
